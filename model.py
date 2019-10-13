@@ -214,7 +214,7 @@ class ResNet(nn.Module):
         print('block.expansion:',block.expansion)
         self.embedding = 512
         self.fc1 = nn.Linear(512 * block.expansion, self.embedding)
-        self.bn2 =nn.BatchNorm2d(self.embedding)
+        self.bn2 =nn.BatchNorm1d(self.embedding)
         self.relu2 =nn.LeakyReLU()
         self.dropout2 =nn.Dropout(p=0.5)
         self.fc2 = nn.Linear(self.embedding, num_classes)
